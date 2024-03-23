@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title> 
+    <link rel="stylesheet" href="style/main.css">
+    <script defer src="js/app.js"></script> 
+</head> 
+<body> 
+    <div class="container">
+    <h2>Калькулятор доставки</h2>
+    
+    <h3>Отправитель<h3>
+    <Label for="senderFirstName">Имя отправителя:</Label>
+    <input type="text" id="senderFirstName" required><br><br>
+    
+    <Label for="senderLastName">Фамилия отправителя:</Label>
+    <input type="text" id="senderLastName" required><br><br>
+    
+    <Label for="senderMiddlLeName">Отчество отправителя:</Label>
+    <input type="text" id="senderMiddleName"><br><br>
+    
+    <h3>Получатель<h3>
+    <Label for="recipientFirstName">Имя получателя:</Label>
+    <input type="text" id="recipientFirstName" required><br><br>
+    
+    <Label for="recipientLastName">Фамилия получателя:</Label>
+    <input type="text" id="recipientLastName" required><br><br>
+    
+    <Label for="recipientMiddleName">Отчество получателя:</Label>
+    <input type="text" id="recipientMiddleName"><br><br>
+    
+    <Label for="weight">Bec посылки (кг) :</Label>
+    <input type="number" id="weight" min="0" step="0.1" required><br><br>
+    
+    <Label for="shippingType">Тип доставки :</Label>
+    <select id="shippingType">
+    <option value="regular">Обычная</option>
+    <option value="express">Экспресс</option>
+    </select><br><br>
+    
+    <Label for="country">Страна доставки :</Label>
+    <select id="country">
+    <option value="USA">США</option>
+    <option value="Canada">Канада</option>
+    <option value="UK">Великобритания</option>
+    </select><br><br>
+    
+    <button onclick="calculateShipping()">Рассчитать стоимость доставки</button>
+    </div>
+    <div id="modal" class="modal">
+    <div class="modal-content">
+
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Результат доставки</h2>
+    <div id="results"></div>
+    </div>
+    </div>
+</body> 
+</html>
